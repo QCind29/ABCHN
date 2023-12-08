@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="org.tensorflow.lite.examples.detection">
+
+    <uses-sdk />
+    <!-- Tell the system this app requires OpenGL ES 3.1. -->
+    <uses-feature
+        android:glEsVersion="0x00030001"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="false"
+        android:debuggable="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:installLocation="internalOnly"
+        android:label="THS2022-15"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.ObjectDetection"
+        tools:ignore="HardcodedDebugMode">
+        <activity
+            android:name="com.food.lite.nckh.detection.MainActivity"
+            android:exported="false" />
+
+
+        <activity
+            android:name="com.food.lite.nckh.detection.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.food.lite.nckh.detection.MainActivity2"
+            android:exported="true"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:label="THS2022-15"/>
+
+        <activity
+            android:name="com.food.lite.nckh.detection.DetectGallery"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:label="Upload images"
+            android:parentActivityName="com.food.lite.nckh.detection.MainActivity2" /> <!-- SRA need to explicitly declare this activity for GS9 ; comment for IRIS device -->
+        <activity
+            android:name="com.food.lite.nckh.detection.DetectorActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.food.lite.nckh.detection.MainActivity2" />
+        <activity
+            android:name="com.food.lite.nckh.detection.ListVob"
+            android:label="Gallery"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.food.lite.nckh.detection.MainActivity2" />
+
+        <activity
+            android:name="com.food.lite.nckh.detection.ListTV"
+            android:label="GalleryTV"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.food.lite.nckh.detection.MainActivity2" />
+
+
+
+
+    </application>
+
+</manifest>
